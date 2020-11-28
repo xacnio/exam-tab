@@ -1,0 +1,21 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "Exam Tab",
+  "description":"Hide visibilitychange, keypress, keyup, keydown, blur, focus events and allow select and copy paste all texts in every tab.",
+  "version":"1.0.0",
+  "icons":{"16":"16.png","48":"48.png","128":"128.png"},
+  "permissions": [
+    "activeTab",
+    "storage",
+    "https://ajax.googleapis.com/"
+  ],
+  "content_scripts": [
+    {
+	  "matches": ["http://*/*", "https://*/*"],
+      "all_frames": true,
+      "js":["exam-tab.js"],
+      "run_at":"document_start"
+    }
+  ]
+}
